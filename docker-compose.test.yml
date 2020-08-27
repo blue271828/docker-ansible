@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  ansible:
+    build: .
+    image: ansible
+  sut:
+    image: blue271828/goss
+    environment:
+      GOSS_FILES_PATH: goss
+      GOSS_FILES_STRATEGY: cp
+    command: dgoss run ansible sleep infinity
+    volumes:
+      - ./goss:/goss/goss
+      - /var/run/docker.sock:/var/run/docker.sock

@@ -1,0 +1,5 @@
+package:
+  ansible:
+    installed: true
+    versions:
+    - 2.9.12-1ppa~trusty
